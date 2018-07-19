@@ -17,14 +17,14 @@ class CreateComprasTable extends Migration
             $table->increments('id');
             $table->string('data');
             $table->float('valor');
-            $table->integer('idCliente')->unsigned();
-            $table->integer('idProduto')->unsigned();
+            $table->integer('idCliente')->unsigned()->nullable();
+            $table->integer('idProduto')->unsigned()->nullable();
             $table->timestamps();
         });
 
         Schema::table('compras', function (Blueprint $table) {
-          $table->foreign('idCliente')->references('id')->on('clientes')->onDelete('cascade');
-          $table->foreign('idProduto')->references('id')->on('produtos')->onDelete('cascade');
+          $table->foreign('idCliente')->references('id')->on('clientes')->onDelete('set null');
+          $table->foreign('idProduto')->references('id')->on('produtos')->onDelete('set null');
         });
     }
 
