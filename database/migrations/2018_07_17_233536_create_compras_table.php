@@ -19,6 +19,7 @@ class CreateComprasTable extends Migration
             $table->float('valor');
             $table->integer('idCliente')->unsigned()->nullable();
             $table->integer('idProduto')->unsigned()->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 

@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->string('tipo')->default('flor');
             $table->float('preco')->unsigned();
             $table->integer('quantidade')->unsigned();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

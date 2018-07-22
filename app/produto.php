@@ -3,8 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class produto extends Model
+class Produto extends Model
 {
-    //
+    use SoftDeletes;
+
+    protected $fillable = ['tipo'];
 }

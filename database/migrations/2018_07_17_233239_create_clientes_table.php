@@ -20,6 +20,7 @@ class CreateClientesTable extends Migration
             $table->string('telefone')->nullable();
             $table->string('endereco');
             $table->string('email')->unique();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
